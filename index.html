@@ -4,36 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dev-hydrogen</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono">
     <style>
+        :root {
+            --text-color: black;
+            --bg-color: white;
+            --link-color: blue;
+            --link-hover-color: darkblue;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: white;
+                --bg-color: #121212;
+                --link-color: #4dabf7; /* Lighter blue for dark mode */
+                --link-hover-color: #82c7ff; /* Even lighter on hover */
+            }
+        }
+
         body, .heart, .copyright {
-            font-family: "JetBrains Mono", monospace; 
+            font-family: "JetBrains Mono", monospace;
             font-size: 16px;
         }
+
         body {
             max-width: 85vh;
             padding: 12px 6px;
             margin: auto;
-            display:flex; flex-direction:column; justify-content:center;
-            min-height:90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 90vh;
             vertical-align: middle;
             align-self: center;
+            background-color: var(--bg-color);
             color: var(--text-color);
         }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--link-hover-color);
+        }
+
         .heart {
             margin: auto;
             width: 100%;
             padding: 12px 6px;
             text-align: right;
-            display:flex; flex-direction:column; justify-content:right;
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
             color: gray;
         }
+
         .copyright {
             margin: auto;
             width: 100%;
             height: 100%;
             text-align: end;
-            display:flex; flex-direction:column; justify-content:right;
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
             color: gray;
         }
     </style>
@@ -45,20 +80,21 @@
     <main>
         <section>
             <h5>Hi. This is a website.</h5>
-                <p>
+            <p>
                 I am a finnish technical artist and full-stack developer.
                 I have 3+ years of experience in software development, of which 2 years have been professional game development.
                 I also make models, textures, shaders etc.
-                Here's some of my open source projects:</p>
+                Here's some of my open source projects:
+            </p>
         </section>
         <section>
             <h4>Projects</h4>
             <ul>
-                <li><a href="https://github.com/dev-hydrogen/nightclub">Nightclub</a> - A music visualiser for minecraft, as a server-side plugin. Uses Resources to generate a resource pack. Compatible with Spigot/Paper and Minestom. <a href="https://www.youtube.com/watch?v=AG64T_4KfBY">Video</a> </li>
+                <li><a href="https://github.com/dev-hydrogen/nightclub">Nightclub</a> - A music visualiser for minecraft, as a server-side plugin. Uses Resources to generate a resource pack. Compatible with Spigot/Paper and Minestom. <a href="https://www.youtube.com/watch?v=AG64T_4KfBY">Video</a></li>
                 <li><a href="https://github.com/dev-hydrogen/resources">Resources</a> - A server-side resource pack generation plugin for minecraft. Compatible with multiple platforms. Uses Creative by Unnamed Team for the api.</li>
                 <li><a href="https://github.com/dev-hydrogen/cosmetics">Cosmetics</a> - A plugin for creating cosmetic items with CustomModelData.</li>
                 <li><a href="https://github.com/dev-hydrogen/debugmarker">Debugmarker API</a> - API for creating Debug Markers, a debug tool left in minecraft, possibly accidentally.</li>
-                <li><a href="https://github.com/dev-hydrogen/luckperms">Luckperms Minestom</a> - Fork of a fork of luckperms, fixing minestom support by syncing up luckperms permissions with Minestom permissions</li>
+                <li><a href="https://github.com/dev-hydrogen/luckperms">Luckperms Minestom</a> - Fork of a fork of luckperms, fixing minestom support by syncing up luckperms permissions with Minestom permissions.</li>
             </ul>
         </section>
         <section>
@@ -74,10 +110,10 @@
             <3
         </div>
     </footer>
+    <footer>
+        <div class="copyright">
+            © Hydrogen 2024-
+        </div>
+    </footer>
 </body>
-<footer>
-    <div class="copyright">
-        © Hydrogen 2024- 
-    </div>
-</footer>
 </html>
